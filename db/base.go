@@ -19,7 +19,7 @@ func Connect() {
 	env := settings.ENVIRONMENT
 	if env == "prod" {
 		database, err = gorm.Open(postgres.Open(settings.POSTGRES_DSN), &gorm.Config{})
-	} else if env == "local" {
+	} else { // if env == "local" {
 		database, err = gorm.Open(sqlite.Open("file::memory:?cache=shared"), &gorm.Config{})
 	}
 

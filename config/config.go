@@ -18,7 +18,7 @@ import (
 )
 
 type settings struct {
-	ENVIRONMENT  string `env:"ENVIRONMENT" binding:"required"`
+	ENVIRONMENT  string `env:"ENVIRONMENT"`
 	POSTGRES_DSN string `env:"POSTGRES_DSN"`
 }
 
