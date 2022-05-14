@@ -1,7 +1,7 @@
 # GoBlog
 
-[![Go Tests](https://github.com/r-cha/goblog/actions/workflows/go.yml/badge.svg)](https://github.com/r-cha/goblog/actions/workflows/go.yml)
-[![CodeQL](https://github.com/r-cha/goblog/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/r-cha/goblog/actions/workflows/codeql-analysis.yml)
+[![Go](https://github.com/r-cha/goblog/actions/workflows/go.yml/badge.svg?branch=main)](https://github.com/r-cha/goblog/actions/workflows/go.yml)
+[![CodeQL](https://github.com/r-cha/goblog/actions/workflows/codeql-analysis.yml/badge.svg?branch=main)](https://github.com/r-cha/goblog/actions/workflows/codeql-analysis.yml)
 
 An extremely simple (barely POC) blog backend written in Go.
 
