@@ -1,13 +1,13 @@
 # GoBlog
 
-An extremely simply (barely POC) blog backend written in Go.
+An extremely simple (barely POC) blog backend written in Go.
 
 ## Running Locally
 
 Something like 
 
 ```sh
-go run
+go run main.go
 ```
 
 ## Testing
