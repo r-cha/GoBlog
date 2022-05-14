@@ -33,14 +33,14 @@ func CreatePost(c *gin.Context) {
 	}
 	db.DB.Create(&post)
 
-	c.JSON(http.StatusOK, gin.H{"data": post})
+	c.JSON(http.StatusOK, post)
 }
 
 func ListPosts(c *gin.Context) {
 	var posts []models.Post
 	db.DB.Find(&posts)
 
-	c.JSON(http.StatusOK, gin.H{"data": posts})
+	c.JSON(http.StatusOK, posts)
 }
 
 func GetPost(c *gin.Context) {
@@ -51,7 +51,7 @@ func GetPost(c *gin.Context) {
 		return
 	}
 
-	c.JSON(http.StatusOK, gin.H{"data": post})
+	c.JSON(http.StatusOK, post)
 }
 
 func UpdatePost(c *gin.Context) {
@@ -71,5 +71,5 @@ func UpdatePost(c *gin.Context) {
 
 	// Update the record
 	db.DB.Model(&post).Updates(input)
-	c.JSON(http.StatusOK, gin.H{"data": post})
+	c.JSON(http.StatusOK, post)
 }
