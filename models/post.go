@@ -6,9 +6,10 @@ import (
 
 type Post struct {
 	gorm.Model
-	Title  string `json:"title"`
-	Author Author `json:"author"`
-	Text   string `json:"text"`
+	Title    string `json:"title"`
+	AuthorID int    `json:"author_id"`
+	Author   Author `json:"author"`
+	Text     string `json:"text"`
 }
 
 type CreatePost struct {

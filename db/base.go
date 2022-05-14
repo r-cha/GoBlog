@@ -27,7 +27,21 @@ func Connect() {
 		panic("Failed to connect to database!")
 	}
 
+	// Register Models
+	// TODO: Can this be automated?
+	// Tedious thing to remember to do imo
+	database.AutoMigrate(&models.Author{})
 	database.AutoMigrate(&models.Post{})
 
 	DB = database
+}
+
+func Close() {
+	conn, _ := DB.DB()
+	conn.Close()
+}
+
+func Reset() {
+	Close()
+	Connect()
 }

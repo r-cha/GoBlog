@@ -1,8 +1,17 @@
 # GoBlog
 
-null pointer exception simulator 2022
+An extremely simply (barely POC) blog backend written in Go.
+
+## Running Locally
+
+Something like 
 
 ```sh
-cd controllers
-go test
+go run
+```
+
+## Testing
+
+```sh
+go test ./tests
 ```
