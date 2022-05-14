@@ -27,7 +27,7 @@ func TestMain(m *testing.M) {
 	os.Exit(code)
 }
 
-func TestServe(req *http.Request) *httptest.ResponseRecorder {
+func MockServe(req *http.Request) *httptest.ResponseRecorder {
 	r := controllers.NewRoutes()
 	w := httptest.NewRecorder()
 
@@ -39,7 +39,7 @@ func TestServe(req *http.Request) *httptest.ResponseRecorder {
 func TestListPosts(t *testing.T) {
 	// List posts
 	req, _ := http.NewRequest("GET", "/v1/posts/", nil)
-	w := TestServe(req)
+	w := MockServe(req)
 
 	assert.Equal(t, w.Code, 200)
 }
@@ -56,7 +56,7 @@ func TestCreatePost(t *testing.T) {
 		}
 	`)
 	req, _ := http.NewRequest("POST", "/v1/posts/", body)
-	w := TestServe(req)
+	w := MockServe(req)
 
 	assert.Equal(t, w.Code, 200)
 	res, _ := io.ReadAll(w.Body)
@@ -75,7 +75,7 @@ func TestGetPost(t *testing.T) {
 		}
 	`)
 	req, _ := http.NewRequest("POST", "/v1/posts/", body)
-	w := TestServe(req)
+	w := MockServe(req)
 	res, _ := io.ReadAll(w.Body)
 
 	var result models.Post
@@ -88,7 +88,7 @@ func TestGetPost(t *testing.T) {
 		fmt.Sprintf("/v1/posts/%s", fmt.Sprint(id)),
 		body,
 	)
-	w = TestServe(req)
+	w = MockServe(req)
 
 	assert.Equal(t, w.Code, 200)
 }
