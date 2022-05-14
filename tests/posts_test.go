@@ -41,7 +41,7 @@ func TestListPosts(t *testing.T) {
 	req, _ := http.NewRequest("GET", "/v1/posts/", nil)
 	w := MockServe(req)
 
-	assert.Equal(t, w.Code, 200)
+	assert.Equal(t, 200, w.Code)
 }
 
 func TestCreatePost(t *testing.T) {
@@ -58,7 +58,7 @@ func TestCreatePost(t *testing.T) {
 	req, _ := http.NewRequest("POST", "/v1/posts/", body)
 	w := MockServe(req)
 
-	assert.Equal(t, w.Code, 200)
+	assert.Equal(t, 200, w.Code)
 	res, _ := io.ReadAll(w.Body)
 	assert.Contains(t, string(res), "Robert")
 }
@@ -76,6 +76,7 @@ func TestGetPost(t *testing.T) {
 	`)
 	req, _ := http.NewRequest("POST", "/v1/posts/", body)
 	w := MockServe(req)
+
 	res, _ := io.ReadAll(w.Body)
 
 	var result models.Post
@@ -90,5 +91,5 @@ func TestGetPost(t *testing.T) {
 	)
 	w = MockServe(req)
 
-	assert.Equal(t, w.Code, 200)
+	assert.Equal(t, 200, w.Code)
 }
