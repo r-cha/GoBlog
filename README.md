@@ -1,7 +1,6 @@
-# GoBlog
+# Golb
 
-[![Go](https://github.com/r-cha/goblog/actions/workflows/go.yml/badge.svg?branch=main)](https://github.com/r-cha/goblog/actions/workflows/go.yml)
-[![CodeQL](https://github.com/r-cha/goblog/actions/workflows/codeql-analysis.yml/badge.svg?branch=main)](https://github.com/r-cha/goblog/actions/workflows/codeql-analysis.yml)
+[![Go](https://github.com/r-cha/golb/actions/workflows/go.yml/badge.svg?branch=main)](https://github.com/r-cha/golb/actions/workflows/go.yml)
 
 An extremely simple (barely POC) blog backend written in Go.
 
